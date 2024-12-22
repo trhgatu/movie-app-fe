@@ -16,7 +16,7 @@
 Dữ liệu về các bộ phim được lấy từ [Nguồn API Phim]([https://phim.nguonc.com](https://phim.nguonc.com/api-document)). API này cung cấp thông tin về tên phim, số tập, poster, mô tả và nhiều thông tin khác liên quan đến các bộ phim.
 
 ### Các endpoint chính:
-- **Danh sách phim**: `https://phim.nguonc.com/api/v1/films`
-- **Chi tiết phim**: `https://phim.nguonc.com/api/v1/films/{slug}`
+- **Danh sách phim**: `https://phim.nguonc.com/api/films`
+- **Chi tiết phim**: `https://phim.nguonc.com/api/films/{slug}`
 
 
