@@ -74,7 +74,8 @@ const MovieList = () => {
         </div>
       </div>
       <div className="col-12 text-center py-4 mt-6">
-        <Link className='px-8 uppercase py-4 bg-red-600 hover:bg-black hover:text-red-600 border-2 border-red-600 transition-all duration-300 text-white'>
+        <Link to='/movies/new'
+         className='px-8 uppercase py-4 bg-red-600 hover:bg-black hover:text-red-600 border-2 border-red-600 transition-all duration-300 text-white'>
           Xem tất cả
         </Link>
       </div>

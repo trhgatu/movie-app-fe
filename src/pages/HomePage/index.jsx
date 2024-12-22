@@ -7,10 +7,10 @@ const HomePage = () => {
   return (
     <div className="pt-24">
       <h1 className="text-4xl font-bold text-center text-red-600 mb-4">
-        Chào Mừng Đến Với T-Movies
+        Chào Mừng Đến Với Movie-App
       </h1>
       <p className="text-lg text-center text-gray-700">
-        Khám Phá Những Bộ Phim Mới Nhất Và Hay Nhất.
+        Khám phá những bộ phim mới nhất và hay nhất !
       </p>
       <MovieSlider />
       <MovieList/>

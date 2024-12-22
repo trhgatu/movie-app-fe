@@ -1,5 +1,6 @@
 import { DefaultLayout } from "../components/Layouts";
 import HomePage from "../pages/HomePage";
+import MoviesPage from "../pages/MoviesPage";
 import MovieDetailPage from "../pages/MovieDetail";
 import WatchMoviePage from "../pages/WatchMoviePage";
 export const userRoute = [
@@ -12,11 +13,15 @@ export const userRoute = [
                 element: <HomePage />
             },
             {
+                path: "/movies/:type",
+                element: <MoviesPage />
+            },
+            {
                 path: "/movie/:slug",
                 element: <MovieDetailPage />
             },
             {
-                path:"/watch/:slug",
+                path:"/watch/:slug/:episodeSlug",
                 element: <WatchMoviePage/>
             }
         ]

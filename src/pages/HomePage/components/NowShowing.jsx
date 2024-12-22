@@ -57,11 +57,8 @@ const NowShowing = () => {
                   backgroundImage: `url(${movie.thumb_url || '/path/to/placeholder-thumbnail.jpg'})`
                 }}
               >
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4">
-                  {/* Tiêu đề phim */}
                   <h3 className="text-white text-xl font-semibold line-clamp-1">{movie.name}</h3>
-                  {/* Thông tin */}
                   <div className="flex items-center mt-2">
                     <span className="text-white text-sm bg-red-600 px-2 py-1 rounded-full">
                       {movie.language}

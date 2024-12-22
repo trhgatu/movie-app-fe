@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -16,6 +19,14 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    if (searchKeyword.trim()) {
+      navigate(`/movies?search=${encodeURIComponent(searchKeyword)}`);
+      setSearchKeyword(''); // Reset thanh tìm kiếm sau khi tìm
+    }
+  };
 
   return (
     <header
@@ -38,10 +49,22 @@ const Header = () => {
             Home
           </Link>
           <Link
-            to="/movies"
+            to="/movies/new"
             className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
           >
-            Movies
+            Phim mới
+          </Link>
+          <Link
+            to="/movies/series"
+            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
+          >
+            Phim bộ
+          </Link>
+          <Link
+            to="/movies/single"
+            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
+          >
+            Phim lẻ
           </Link>
           <Link
             to="/about"
@@ -50,15 +73,21 @@ const Header = () => {
             About
           </Link>
         </nav>
-
-        {/* Search Bar */}
-        <div className="relative">
+        <form onSubmit={handleSearch} className="relative">
           <input
             type="text"
+            value={searchKeyword}
+            onChange={(e) => setSearchKeyword(e.target.value)}
             className="px-4 py-2 rounded-full border-2 border-gray-300"
-            placeholder="Search..."
+            placeholder="Search movies..."
           />
-        </div>
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full"
+          >
+            Go
+          </button>
+        </form>
       </div>
     </header>
   );

@@ -69,12 +69,6 @@ const MovieSlider = () => {
                     {movie.name}
                   </h2>
                   <p className="text-sm text-gray-200 line-clamp-2">{movie.description}</p>
-
-
-                  {/*  <div className="flex items-center justify-center mt-4">
-                    <AiFillPlayCircle className="text-white text-6xl group-hover:text-red-600 duration-300 transition-all" />
-                  </div> */}
-
                 </div>
               </div>
             </Link>
