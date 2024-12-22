@@ -11,7 +11,7 @@
 ## Link demo: https://movie-app-fe-eta.vercel.app/
 
 ## Nguồn API
-Dữ liệu về các bộ phim được lấy từ `https://phim.nguonc.com](https://phim.nguonc.com/api-document`. API này cung cấp thông tin về tên phim, số tập, poster, mô tả và nhiều thông tin khác liên quan đến các bộ phim.
+Dữ liệu về các bộ phim được lấy từ `https://phim.nguonc.com/api-document`. API này cung cấp thông tin về tên phim, số tập, poster, mô tả và nhiều thông tin khác liên quan đến các bộ phim.
 
 ### Các endpoint chính:
 - **Danh sách phim**: `https://phim.nguonc.com/api/films`
