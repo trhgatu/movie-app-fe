@@ -59,7 +59,7 @@ const MoviesPage = () => {
   if (isError) return <p>Có lỗi xảy ra khi tải danh sách phim.</p>;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 pt-24">
+    <div className="min-h-screen bg-gray-100 py-8">
       <div className="container mx-auto">
         <h1 className="text-2xl font-bold mb-6">
           {searchQuery

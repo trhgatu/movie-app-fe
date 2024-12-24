@@ -6,7 +6,7 @@ function DefaultLayout({ children }) {
     return (
         <div>
             <Header />
-            <div className="bg-white">
+            <div className="bg-white pt-20">
                 <div className="content">
                     {children}
                     <Outlet />

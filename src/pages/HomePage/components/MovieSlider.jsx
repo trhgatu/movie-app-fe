@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { fetchActionMovies } from '../../../services/movieService';
+import { ClipLoader } from 'react-spinners';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -15,13 +16,11 @@ const MovieSlider = () => {
     queryFn: fetchActionMovies,
   });
 
-  if (isLoading) {
-    return (
-      <div className="absolute inset-0 flex justify-center items-center bg-black opacity-50">
-        <span className="text-white text-2xl">Loading...</span>
-      </div>
-    );
-  }
+  if (isLoading) return (
+    <div className="flex justify-center items-center min-h-screen">
+      <ClipLoader size={50} color="#3498db" />
+    </div>
+  );
 
   if (error) {
     return (
@@ -32,7 +31,7 @@ const MovieSlider = () => {
   }
 
   return (
-    <div className="relative w-full px-20 py-16">
+    <div className="relative w-full px-4 md:px-20 py-16">
       <Swiper
         className="w-full h-full"
         navigation
@@ -42,7 +41,18 @@ const MovieSlider = () => {
         }}
         modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}
         spaceBetween={20}
-        slidesPerView={5}
+        slidesPerView={1}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.slug}>
