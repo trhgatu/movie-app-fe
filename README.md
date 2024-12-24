@@ -8,7 +8,7 @@
 - Phân trang các bộ phim, với khả năng điều hướng giữa các trang.
 - Hiển thị thông tin chi tiết về mỗi bộ phim như tên, mô tả, số tập, chất lượng video, và ngôn ngữ.
 - Chất lượng video HD và phụ đề Vietsub.
-## Link demo: https://movie-app-fe-eta.vercel.app/
+## Link demo: [Movie-Station](https://movie-station-flame.vercel.app/)
 
 ## Nguồn API
 Dữ liệu về các bộ phim được lấy từ `https://phim.nguonc.com/api-document`. API này cung cấp thông tin về tên phim, số tập, poster, mô tả và nhiều thông tin khác liên quan đến các bộ phim.
