@@ -54,11 +54,9 @@ const WatchMoviePage = () => {
   if(isError) return <div className="text-center text-lg text-red-600">{error.message || 'Có lỗi xảy ra khi tải dữ liệu'}</div>;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen text-white pt-24">
       <div className="container mx-auto p-6">
-        <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-
-          {/* Video Player Section */}
+        <div className="max-w-4xl mx-auto  rounded-lg shadow-xl overflow-hidden">
           {currentEpisode && (
             <div className="mt-6 bg-black p-4 rounded-lg shadow-xl">
               <h2 className="text-3xl font-semibold text-white mb-4">Đang xem: Tập {currentEpisode.name}</h2>

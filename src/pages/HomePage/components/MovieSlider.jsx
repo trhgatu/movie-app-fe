@@ -2,25 +2,20 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import { AiFillPlayCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { fetchActionMovies } from '../../../services/movieService';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
-const fetchMovies = async () => {
-  const response = await axios.get('https://phim.nguonc.com/api/films/the-loai/hanh-dong');
-  return response.data.items;
-};
-
 const MovieSlider = () => {
   const { data: movies, isLoading, error } = useQuery({
     queryKey: ['actionMovies'],
-    queryFn: fetchMovies,
+    queryFn: fetchActionMovies,
   });
-  if(isLoading) {
+
+  if (isLoading) {
     return (
       <div className="absolute inset-0 flex justify-center items-center bg-black opacity-50">
         <span className="text-white text-2xl">Loading...</span>
@@ -28,13 +23,14 @@ const MovieSlider = () => {
     );
   }
 
-  if(error) {
+  if (error) {
     return (
       <div className="absolute inset-0 flex justify-center items-center bg-black opacity-50">
         <span className="text-white text-2xl">Có lỗi xảy ra khi tải dữ liệu</span>
       </div>
     );
   }
+
   return (
     <div className="relative w-full px-20 py-16">
       <Swiper
@@ -42,7 +38,7 @@ const MovieSlider = () => {
         navigation
         loop={true}
         autoplay={{
-          delay: 3000
+          delay: 3000,
         }}
         modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}
         spaceBetween={20}
@@ -54,7 +50,7 @@ const MovieSlider = () => {
               <div
                 className="relative bg-center w-full h-80 bg-cover shadow-lg rounded-md overflow-hidden group"
                 style={{
-                  backgroundImage: `url(${movie.thumb_url || '/path/to/placeholder-thumbnail.jpg'})`
+                  backgroundImage: `url(${movie.thumb_url || '/path/to/placeholder-thumbnail.jpg'})`,
                 }}
               >
                 {movie.language && (
@@ -64,7 +60,6 @@ const MovieSlider = () => {
                 )}
                 <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 cursor-pointer transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 w-full py-4 px-6 z-10">
-
                   <h2 className="text-xl line-clamp-1 font-semibold text-white group-hover:text-red-600 transition-colors duration-300">
                     {movie.name}
                   </h2>

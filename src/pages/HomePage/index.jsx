@@ -1,7 +1,6 @@
-// src/pages/HomePage.jsx
+
 import React from 'react';
 import MovieSlider from '../HomePage/components/MovieSlider';
-import MovieList from './components/MovieList';
 import NowShowing from './components/NowShowing';
 const HomePage = () => {
   return (
@@ -13,7 +12,6 @@ const HomePage = () => {
         Khám phá những bộ phim mới nhất và hay nhất !
       </p>
       <MovieSlider />
-      <MovieList/>
       <NowShowing/>
     </div>
   );

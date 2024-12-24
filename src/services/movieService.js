@@ -27,3 +27,7 @@ export const fetchSingleMovies = async (page = 1) => {
   const response = await apiClient.get(`/films/danh-sach/phim-le?page=${page}`);
   return response.data.items;
 };
+export const fetchActionMovies = async () => {
+  const response = await apiClient.get('/films/the-loai/hanh-dong');
+  return response.data.items;
+};

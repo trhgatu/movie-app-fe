@@ -8,30 +8,24 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
     if (searchKeyword.trim()) {
-      navigate(`/movies?search=${encodeURIComponent(searchKeyword)}`);
-      setSearchKeyword(''); // Reset thanh tìm kiếm sau khi tìm
+      navigate(`/movies?search=${encodeURIComponent(searchKeyword)}`); // Điều hướng đến MoviesPage với từ khóa tìm kiếm
+      setSearchKeyword('');
     }
   };
 
   return (
     <header
       className={`fixed top-0 left-0 w-full p-4 transition-all duration-300 z-10 ${
-        isScrolled ? 'bg-black' : 'transparent'
+        isScrolled ? 'bg-black' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -42,37 +36,14 @@ const Header = () => {
 
         {/* NavBar */}
         <nav className="flex space-x-4">
-          <Link
-            to="/"
-            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
-          >
-            Home
-          </Link>
-          <Link
-            to="/movies/new"
-            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
-          >
-            Phim mới
-          </Link>
-          <Link
-            to="/movies/series"
-            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
-          >
-            Phim bộ
-          </Link>
-          <Link
-            to="/movies/single"
-            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
-          >
-            Phim lẻ
-          </Link>
-          <Link
-            to="/about"
-            className={`hover:text-gray-300 ${isScrolled ? 'text-white' : 'text-black'}`}
-          >
-            About
-          </Link>
+          <Link to="/" className={`${isScrolled ? 'text-white' : 'text-black'}`}>Home</Link>
+          <Link to="/movies/new" className={`${isScrolled ? 'text-white' : 'text-black'}`}>Phim mới</Link>
+          <Link to="/movies/series" className={`${isScrolled ? 'text-white' : 'text-black'}`}>Phim bộ</Link>
+          <Link to="/movies/single" className={`${isScrolled ? 'text-white' : 'text-black'}`}>Phim lẻ</Link>
+          <Link to="/about" className={`${isScrolled ? 'text-white' : 'text-black'}`}>About</Link>
         </nav>
+
+        {/* Search Form */}
         <form onSubmit={handleSearch} className="relative">
           <input
             type="text"

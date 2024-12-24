@@ -13,6 +13,10 @@ export const userRoute = [
                 element: <HomePage />
             },
             {
+                path: "/movies",
+                element: <MoviesPage />,
+            },
+            {
                 path: "/movies/:type",
                 element: <MoviesPage />
             },
