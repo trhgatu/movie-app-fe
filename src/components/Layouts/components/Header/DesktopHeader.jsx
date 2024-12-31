@@ -24,8 +24,8 @@ const DesktopHeader = ({ searchKeyword, setSearchKeyword, handleSearch }) => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="hover:bg-gray-200 focus:bg-gray-100 transition-all duration-300 rounded-md">
-                                <p className="scroll-m-20 dark:text-white text-base font-semibold tracking-tight hover:text-red-500">Phim</p>
+                            <NavigationMenuTrigger className="hover:bg-gray-200 dark:hover:text-white dark:bg-white focus:bg-gray-100 transition-all duration-300 rounded-md">
+                                <p className="scroll-m-20 dark:text-black text-base font-semibold tracking-tight hover:text-red-500">Phim</p>
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="p-2 shadow-lg w-[250px] bg-white">
                                 <div className="space-y-2 w-32">

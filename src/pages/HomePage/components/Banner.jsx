@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetchNewMovies } from "@/services/movieService";
 import Marquee from "@/components/ui/marquee";
 import PulsatingButton from "@/components/ui/pulsating-button";
+import WordPullUp from "@/components/ui/word-pull-up";
+
 
 
 const Banner = ({ movieSliderRef }) => {
@@ -39,10 +41,13 @@ const Banner = ({ movieSliderRef }) => {
     <div className="relative h-auto dark:bg-[#121212] sm:h-[90vh] flex flex-col sm:flex-row items-center justify-between px-4 sm:px-10 py-6 sm:py-0">
       <div className="relative z-10 w-full sm:w-1/2 mb-6 sm:mb-0 sm:p-6 max-w-lg sm:max-w-4xl">
         <h1 className="text-3xl sm:text-5xl dark:text-white font-bold mb-4 sm:mb-6 text-center sm:text-left">
-          Chào mừng đến với Movie Station!
+          Chào mừng đến với
         </h1>
+        <WordPullUp className="text-6xl mb-4 dark:text-red-500 text-red-500" >Movie Station</WordPullUp>
         <p className="text-lg dark:text-white mb-4 sm:mb-8 text-center sm:text-left">
           Khám phá bộ sưu tập phim đa dạng với các thể loại hấp dẫn. Trải nghiệm ngay những bộ phim hot nhất và mới nhất tại đây.
+        </p>
+        <p className="text-lg dark:text-white mb-4 sm:mb-8 text-center sm:text-left flex items-center justify-center sm:justify-start">
         </p>
         <div className="relative justify-center">
           <PulsatingButton onClick={handleExploreClick} className="mx-auto sm:mx-0">

@@ -11,7 +11,7 @@ const DarkModeToggle = () => {
     };
 
     return (
-        <Button onClick={toggleDarkMode} variant="outline">
+        <Button onClick={toggleDarkMode} className="border">
             {isDarkMode ? (
                 <MdLightMode className="text-yellow-500" />
             ) : (
