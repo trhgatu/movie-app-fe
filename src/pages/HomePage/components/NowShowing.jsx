@@ -26,9 +26,9 @@ const NowShowing = () => {
   }
 
   return (
-    <div className="relative w-full px-4 sm:px-8 md:px-16 lg:px-20 py-10">
+    <div className="relative w-full px-4 sm:px-8 md:px-16 lg:px-20 py-5">
       <h2 className="text-3xl font-semibold text-center text-red-600 mb-6">
-        Phim Đang Chiếu
+        Phim đang chiếu
       </h2>
 
       {isLoading && (

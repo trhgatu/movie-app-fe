@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
-const MovieSlider = () => {
+const MovieSlider = React.forwardRef((props, ref) => {
   const { data: movies, isLoading, error } = useQuery({
     queryKey: ['actionMovies'],
     queryFn: fetchActionMovies,
@@ -31,7 +31,10 @@ const MovieSlider = () => {
   }
 
   return (
-    <div className="relative w-full px-4 md:px-20 py-16">
+    <div ref={ref} className="relative w-full px-4 md:px-20 py-5">
+      <h2 className="text-3xl font-semibold text-center text-red-600 mb-6">
+        Phim mới
+      </h2>
       <Swiper
         className="w-full h-full"
         navigation
@@ -82,6 +85,6 @@ const MovieSlider = () => {
       </Swiper>
     </div>
   );
-};
+});
 
 export default MovieSlider;

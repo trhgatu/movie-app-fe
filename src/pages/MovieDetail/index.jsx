@@ -34,7 +34,7 @@ const MovieDetailPage = () => {
   return (
     <div className="min-h-screen text-white bg-gray-100">
       <div className="container mx-auto p-6">
-        <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
           <div className="relative">
             <img
               className="w-full h-96 object-cover"
